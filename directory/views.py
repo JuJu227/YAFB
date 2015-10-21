@@ -22,7 +22,6 @@ def employee_detail(request, employee_id):
     })
 
 	return HttpResponse(template.render(context))
-    # return HttpResponse("You're looking at employee %s." % employee_id)
 
 def group_detail(request, group_id):
 	group = GroupProfile.objects.get(pk=group_id)
@@ -32,4 +31,3 @@ def group_detail(request, group_id):
     })
 	
 	return HttpResponse(template.render(context))
-    # return HttpResponse("You're looking at group %s." % group_id)
