@@ -15,7 +15,21 @@ def index(request):
     return HttpResponse(template.render(context))
 
 def employee_detail(request, employee_id):
-    return HttpResponse("You're looking at employee %s." % employee_id)
+	employee = Employee.objects.get(pk=employee_id)
+	template = loader.get_template('directory/employee.html')
+	context = RequestContext(request, {
+        'employee': employee,
+    })
+
+	return HttpResponse(template.render(context))
+    # return HttpResponse("You're looking at employee %s." % employee_id)
 
 def group_detail(request, group_id):
-    return HttpResponse("You're looking at group %s." % group_id)
+	group = GroupProfile.objects.get(pk=group_id)
+	template = loader.get_template('directory/group.html')
+	context = RequestContext(request, {
+        'group': group,
+    })
+	
+	return HttpResponse(template.render(context))
+    # return HttpResponse("You're looking at group %s." % group_id)

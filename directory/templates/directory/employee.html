@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% if employee %}
+	    <div class="row">
+	        <div class="col-md-4">
+	        	<h3><a href="/directory/employee/{{ employee.id }}/">{{ employee.user.username }}</a></h3>
+		        <p>{{ employee.full_name }}</p>
+		        <p>{{ employee.title }}</p>
+		        <p>{{ employee.start_date }}</p>
+		        <p>{{ employee.description }}</p>
+	        </div>
+	    </div>
+	{% else %}
+	    <p>This employee is not available.</p>
+	{% endif %}
+
+{% endblock %}

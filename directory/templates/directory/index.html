@@ -6,9 +6,6 @@
 	    {% for group in groups %}
 	        <div class="col-md-4">
 	        	<h3><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></h3>
-		        <p>{{ group.fdivl_name }}</p>
-		        <p>{{ group.title }}</p>
-		        <p>{{ group.start_date }}</p>
 		        <p>{{ group.description }}</p>
 	        </div>
 	    {% endfor %}
@@ -21,21 +18,22 @@
 
 
 {% block employeeblock %}
-
-	{% if employees %}
-	    <div class="row">
-	    {% for employee in employees %}
-	        <div class="col-md-4">
-	        	<h3><a href="/directory/employee/{{ employee.id }}/">{{ employee.user.username }}</a></h3>
-		        <p>{{ employee.full_name }}</p>
-		        <p>{{ employee.title }}</p>
-		        <p>{{ employee.start_date }}</p>
-		        <p>{{ employee.description }}</p>
-	        </div>
-	    {% endfor %}
-	    </div>
-	{% else %}
-	    <p>No employees are available.</p>
-	{% endif %}
+	<div class="well">
+		{% if employees %}
+		    <div class="row">
+		    {% for employee in employees %}
+		        <div class="col-md-4">
+		        	<h3><a href="/directory/employee/{{ employee.id }}/">{{ employee.user.username }}</a></h3>
+			        <p>{{ employee.full_name }}</p>
+			        <p>{{ employee.title }}</p>
+			        <p>{{ employee.start_date }}</p>
+			        <p>{{ employee.description }}</p>
+		        </div>
+		    {% endfor %}
+		    </div>
+		{% else %}
+		    <p>No employees are available.</p>
+		{% endif %}
+	</div>
 
 {% endblock %}

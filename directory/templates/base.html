@@ -57,14 +57,17 @@
     </nav>
 
     <div class="container">
+
+      <div class="row">
+        {% block content %}{% endblock %}
+      </div>
+
       <div class="row">
         {% block groupblock %}{% endblock %}
       </div>
 
       <div class="row">
-        <div class="well">
           {% block employeeblock %}{% endblock %}
-        </div>
       </div>
 
       <hr>
