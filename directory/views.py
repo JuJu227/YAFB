@@ -13,3 +13,6 @@ def index(request):
         'groups': groups,
     })
     return HttpResponse(template.render(context))
+
+def detail(request, employee_id):
+    return HttpResponse("You're looking at employee %s." % employee_id)
