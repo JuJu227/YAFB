@@ -1,13 +1,33 @@
-{% if employees %}
-    <ul>
-    {% for employee in employees %}
-        <li><a href="/directory/{{ employee.id }}/">{{ employee.user.username }}</a></li>
-        <p>{{ employee.full_name }}</p>
-        <p>{{ employee.title }}</p>
-        <p>{{ employee.start_date }}</p>
-        <p>{{ employee.description }}</p>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No employees are available.</p>
-{% endif %}
+{% extends 'directory/base.html' %}
+
+{% block content %}
+
+	{% if groups %}
+	    <ul>
+	    {% for group in groups %}
+	        <li><a href="/directory/{{ group.id }}/">{{ group.group.name }}</a></li>
+	        <p>{{ group.full_name }}</p>
+	        <p>{{ group.title }}</p>
+	        <p>{{ group.start_date }}</p>
+	        <p>{{ group.description }}</p>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No groups are available.</p>
+	{% endif %}
+
+	{% if employees %}
+	    <ul>
+	    {% for employee in employees %}
+	        <li><a href="/directory/{{ employee.id }}/">{{ employee.user.username }}</a></li>
+	        <p>{{ employee.full_name }}</p>
+	        <p>{{ employee.title }}</p>
+	        <p>{{ employee.start_date }}</p>
+	        <p>{{ employee.description }}</p>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No employees are available.</p>
+	{% endif %}
+
+{% endblock %}
