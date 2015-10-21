@@ -1,13 +1,13 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 
-from .models import User
+from .models import User, Employee
 
 
 def index(request):
-    users = User.objects.order_by('username')
+    employees = Employee.objects.order_by('start_date')
     template = loader.get_template('directory/index.html')
     context = RequestContext(request, {
-        'users': users,
+        'employees': employees,
     })
     return HttpResponse(template.render(context))

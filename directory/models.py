@@ -12,6 +12,7 @@ class GroupProfile(models.Model):
 
 class Employee(models.Model):
 	user = models.OneToOneField(User)
+	full_name = models.CharField(max_length=100)
 	title = models.CharField(max_length=100)
 	description = models.CharField(max_length=300)
 	start_date = models.DateField()
