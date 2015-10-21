@@ -5,7 +5,7 @@
 	    <div>
 	    {% for group in groups %}
 	        <div class="col-md-4">
-	        	<h3><a href="/directory/{{ group.id }}/">{{ group.group.name }}</a></h3>
+	        	<h3><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></h3>
 		        <p>{{ group.fdivl_name }}</p>
 		        <p>{{ group.title }}</p>
 		        <p>{{ group.start_date }}</p>
@@ -26,7 +26,7 @@
 	    <div class="row">
 	    {% for employee in employees %}
 	        <div class="col-md-4">
-	        	<h3><a href="/directory/{{ employee.id }}/">{{ employee.user.username }}</a></h3>
+	        	<h3><a href="/directory/employee/{{ employee.id }}/">{{ employee.user.username }}</a></h3>
 		        <p>{{ employee.full_name }}</p>
 		        <p>{{ employee.title }}</p>
 		        <p>{{ employee.start_date }}</p>

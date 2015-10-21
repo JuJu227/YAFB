@@ -14,5 +14,8 @@ def index(request):
     })
     return HttpResponse(template.render(context))
 
-def detail(request, employee_id):
+def employee_detail(request, employee_id):
     return HttpResponse("You're looking at employee %s." % employee_id)
+
+def group_detail(request, group_id):
+    return HttpResponse("You're looking at group %s." % group_id)
