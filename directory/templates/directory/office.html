@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block headerblock %}
+	<p>{{ header }}</p>
+{% endblock %}
+
+{% block content %}
+	{% if office %}
+	    <div class="sub-header">
+	        <h3>Description: {{ office.name }}</h3>
+	        <h3>Address: {{ office.location }}</h3>
+	    </div>
+	{% endif %}
+
+	<div class="panel panel-default">
+		{% if employees %}
+		    <ul class="list-office">
+		    {% for employee in employees %}
+		        <li class="list-group-item">
+		        	<img src="{{ employee.picture }}">
+		        	<h4><a href="/directory/employee/{{ employee.id }}/">{{ employee.full_name }}</a></h4>
+			        <p>{{ employee.title }}</p>
+		        </li>
+		    {% endfor %}
+		    </ul>
+		{% endif %}
+	</div>
+{% endblock %}

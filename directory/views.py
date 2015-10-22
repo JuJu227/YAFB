@@ -49,17 +49,13 @@ def signin(request):
     return HttpResponseRedirect("/login")
 
 def index(request):
-    employees = Employee.objects.order_by('start_date')
-    groups = GroupProfile.objects.order_by('description')
-    types = Type.objects.order_by('name')
-    offices = Office.objects.order_by('name')
+    employees = Employee.objects.order_by('full_name')
+    groups = GroupProfile.objects.order_by('group')
     template = loader.get_template('directory/index.html')
     navinfo = nav()
     context = RequestContext(request, {
         'employees': employees,
         'groups': groups,
-        'types': types,
-        'offices': offices,
         'header': "Directory",
         'navinfo': navinfo,
     })
@@ -93,6 +89,21 @@ def group_detail(request, group_id):
 	
 	return HttpResponse(template.render(context))
 
+def office_detail(request, office_id):
+	office = Office.objects.get(pk=office_id)
+	employees = Employee.objects.filter(office=office_id)
+	header = "Office: %s" % office
+	template = loader.get_template('directory/group.html')
+	navinfo = nav()
+	context = RequestContext(request, {
+        'office': office,
+        'employees': employees,
+        'header': header,
+        'navinfo': navinfo,
+    })
+	
+	return HttpResponse(template.render(context))
+
 def type_list(request, type_id):
 	groups = GroupProfile.objects.filter(type=type_id)
 	type = Type.objects.get(pk=type_id)
@@ -109,13 +120,25 @@ def type_list(request, type_id):
 
 def news_feed(request):
     messages = Message.objects.order_by('-time_stamp')
-
+    navinfo = nav()
     template = loader.get_template('directory/news_item.html')
     context = RequestContext(request, {
         'newsfeed': messages,
+        'navinfo': navinfo,
     })
 
     return HttpResponse(template.render(context))
+
+def post_item(request):
+	# TODO: change employee to signed in user
+    employee = Employee.objects.get(pk=2)
+
+    message = Message(writer=employee, text=request.POST.get("content", ""))
+    message.save()
+    print "New message %s" % message.text
+
+    return HttpResponseRedirect("..")
+
 
 def news_feed_by_empoyee(request, employee_id):
     employee = Employee.objects.get(pk=employee_id)

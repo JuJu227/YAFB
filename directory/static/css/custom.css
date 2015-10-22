@@ -1,6 +1,11 @@
+body {
+	background-color: #F5F8FA;
+}
+
 .navbar {
 	background-color: #2CACE3;
-	border: none;
+	border-bottom: solid;
+	border-color: white;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -12,6 +17,10 @@
 .navbar-inverse .navbar-brand {
 	color: white;
 	font-size: 1.5em;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+	background-color: #005695;
 }
 
 .header {
@@ -27,8 +36,31 @@
 	margin-top: -0.5em;
 }
 
+.search {
+	margin-top: -20px;
+	margin-bottom: 100px;
+}
+
+.search-input {
+	font-size: .65em;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #EDEFF0;
+	border-width: 2px;
+	font-weight: 200;
+	padding-left: 10px;
+}
+
+.search-btn {
+	font-size: .65em;
+	border-radius: 5px;
+	border-color: #EDEFF0;
+	border-width: 2px;
+}
+
 .btn {
 	color: #2CACE3;
+	padding: 1px 12px;
 }
 
 .list-group-item a {
