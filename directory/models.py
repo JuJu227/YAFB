@@ -10,12 +10,18 @@ class GroupProfile(models.Model):
 	group = models.OneToOneField(Group)
 	description = models.CharField(max_length=300)
 
+class Office(models.Model):
+	name = models.CharField(max_length=100)
+	Location = models.CharField(max_length=300)
+
 class Employee(models.Model):
 	user = models.OneToOneField(User)
 	full_name = models.CharField(max_length=100)
 	title = models.CharField(max_length=100)
 	description = models.CharField(max_length=300)
 	start_date = models.DateField()
+	office = models.ForeignKey(Office)
+	groups = models.ManyToManyField(GroupProfile)
 
 class Message(models.Model):
 	writer = models.OneToOneField(User)

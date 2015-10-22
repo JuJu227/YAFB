@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="well">
+		{% if types %}
+		    <div class="row">
+		    {% for type in types %}
+		        <div class="col-md-4">
+		        	<h3><a href="/directory/type/{{ type.id }}/">{{ type.name }}</a></h3>
+			        <p>{{ type.full_name }}</p>
+			        <p>{{ type.title }}</p>
+			        <p>{{ type.start_date }}</p>
+			        <p>{{ type.description }}</p>
+		        </div>
+		    {% endfor %}
+		    </div>
+		{% else %}
+		    <p>No types are available.</p>
+		{% endif %}
+	</div>
+
+{% endblock %}
