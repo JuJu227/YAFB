@@ -1,22 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<div class="well">
-		{% if types %}
-		    <div class="row">
-		    {% for type in types %}
-		        <div class="col-md-4">
-		        	<h3><a href="/directory/type/{{ type.id }}/">{{ type.name }}</a></h3>
-			        <p>{{ type.full_name }}</p>
-			        <p>{{ type.title }}</p>
-			        <p>{{ type.start_date }}</p>
-			        <p>{{ type.description }}</p>
-		        </div>
-		    {% endfor %}
-		    </div>
-		{% else %}
-		    <p>No types are available.</p>
-		{% endif %}
-	</div>
-
+	{% if groups %}
+	    <div class="row">
+	    {% for group in groups %}
+	        <div class="well col-md-4">
+	        	<h3><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></h3>
+	        </div>
+	    {% endfor %}
+	    </div>
+	{% else %}
+	    <p>No groups are available.</p>
+	{% endif %}
 {% endblock %}

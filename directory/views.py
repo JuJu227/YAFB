@@ -35,7 +35,7 @@ def group_detail(request, group_id):
 	return HttpResponse(template.render(context))
 
 def type_list(request, type_id):
-	groups = GroupProfile.objects.get(type=type_id)
+	groups = GroupProfile.objects.filter(type=type_id)
 	template = loader.get_template('directory/type.html')
 	context = RequestContext(request, {
         'groups': groups,
