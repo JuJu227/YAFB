@@ -1,18 +1,20 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 
-from .models import User, Employee, GroupProfile, Type
+from .models import User, Employee, GroupProfile, Type, Office
 
 
 def index(request):
     employees = Employee.objects.order_by('start_date')
     groups = GroupProfile.objects.order_by('description')
     types = Type.objects.order_by('name')
+    offices = Office.objects.order_by('name')
     template = loader.get_template('directory/index.html')
     context = RequestContext(request, {
         'employees': employees,
         'groups': groups,
         'types': types,
+        'offices': offices,
         'header': "Directory",
     })
     return HttpResponse(template.render(context))
