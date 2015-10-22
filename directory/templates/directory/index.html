@@ -12,7 +12,7 @@
 
 
 {% block headerblock %}
-	<h1>{{ header }}</h1>
+	<p>{{ header }}</p>
 {% endblock %}
 
 
@@ -21,8 +21,9 @@
 	    <div>
 	    {% for group in groups %}
 	        <div class="col-md-4">
-	        	<h3><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></h3>
-		        <p>{{ group.description }}</p>
+	        	<div class="panel panel-primary">
+		        	<p class="panel-body"><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></p>
+	        	</div>
 	        </div>
 	    {% endfor %}
 	    </div>
