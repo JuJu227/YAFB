@@ -28,6 +28,7 @@
 		    <ul class="list-group">
 		    {% for employee in employees %}
 		        <li class="list-group-item">
+		        	<img src="{{ employee.picture }}">
 		        	<h4><a href="/directory/employee/{{ employee.id }}/">{{ employee.full_name }}</a></h4>
 			        <p>{{ employee.title }}</p>
 		        </li>

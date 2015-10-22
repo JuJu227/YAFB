@@ -20,6 +20,13 @@
 	font-size: 4em;
 }
 
+.sub-header {
+	text-align: center;
+	color: #2CACE3;
+	font-size: 4em;
+	margin-top: -0.5em;
+}
+
 .btn {
 	color: #2CACE3;
 }
@@ -41,6 +48,11 @@
 	padding-top: 2em;
 	padding-bottom: 2em;
 	border: none;
+}
+
+.panel-small {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
 }
 
 .panel-primary a {
