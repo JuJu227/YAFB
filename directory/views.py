@@ -15,17 +15,13 @@ def nav():
     return navinfo
 
 def index(request):
-    employees = Employee.objects.order_by('start_date')
-    groups = GroupProfile.objects.order_by('description')
-    types = Type.objects.order_by('name')
-    offices = Office.objects.order_by('name')
+    employees = Employee.objects.order_by('full_name')
+    groups = GroupProfile.objects.order_by('group')
     template = loader.get_template('directory/index.html')
     navinfo = nav()
     context = RequestContext(request, {
         'employees': employees,
         'groups': groups,
-        'types': types,
-        'offices': offices,
         'header': "Directory",
         'navinfo': navinfo,
     })
