@@ -13,6 +13,7 @@ def index(request):
         'employees': employees,
         'groups': groups,
         'types': types,
+        'header': "Directory",
     })
     return HttpResponse(template.render(context))
 
@@ -36,9 +37,12 @@ def group_detail(request, group_id):
 
 def type_list(request, type_id):
 	groups = GroupProfile.objects.filter(type=type_id)
+	type = Type.objects.get(pk=type_id)
+	header = "Groups of type: %s" % type
 	template = loader.get_template('directory/type.html')
 	context = RequestContext(request, {
         'groups': groups,
+        'header': header,
     })
 	
 	return HttpResponse(template.render(context))

@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block headerblock %}
+	<h1>{{ header }}</h1>
+{% endblock %}
+
 {% block content %}
 	{% if groups %}
 	    <div class="row">
