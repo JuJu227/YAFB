@@ -50,13 +50,25 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Group Types <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                {% block navtypes %}{% endblock %}
+                {% if navinfo.types %}
+                    {% for type in navinfo.types %}
+                        <li><a href="/directory/type/{{ type.id }}/">{{ type.name }}</a></li>
+                    {% endfor %}
+                {% else %}
+                    <li>No types are available.</li>
+                {% endif %}
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Offices <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                {% block navoffices %}{% endblock %}
+                {% if navinfo.offices %}
+                    {% for office in navinfo.offices %}
+                        <li><a href="/directory/office/{{ office.id }}/">{{ office.name }}</a></li>
+                    {% endfor %}
+                {% else %}
+                    <li>No offices are available.</li>
+                {% endif %}
               </ul>
             </li>
             <!-- <li>

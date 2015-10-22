@@ -1,25 +1,5 @@
 {% extends 'base.html' %}
 
-{% block navtypes %}
-	{% if types %}
-	    {% for type in types %}
-        	<li><a href="/directory/type/{{ type.id }}/">{{ type.name }}</a></li>
-	    {% endfor %}
-	{% else %}
-	    <li>No types are available.</li>
-	{% endif %}
-{% endblock %}
-
-{% block navoffices %}
-	{% if offices %}
-	    {% for office in offices %}
-        	<li><a href="/directory/office/{{ office.id }}/">{{ office.name }}</a></li>
-	    {% endfor %}
-	{% else %}
-	    <li>No offices are available.</li>
-	{% endif %}
-{% endblock %}
-
 
 {% block headerblock %}
 	<p>{{ header }}</p>
