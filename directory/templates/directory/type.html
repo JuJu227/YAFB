@@ -8,8 +8,10 @@
 	{% if groups %}
 	    <div class="row">
 	    {% for group in groups %}
-	        <div class="well col-md-4">
-	        	<h3><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></h3>
+	        <div class="col-md-4">
+	        	<div class="panel panel-primary">
+		        	<p class="panel-body"><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></p  class="panel-body">
+	        	</div>
 	        </div>
 	    {% endfor %}
 	    </div>
