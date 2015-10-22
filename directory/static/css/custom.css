@@ -23,3 +23,27 @@
 .btn {
 	color: #2CACE3;
 }
+
+.list-group-item a {
+	color: #2CACE3;
+}
+
+.list-group-item p {
+	color: gray;
+}
+
+.panel-body {
+	text-align: center;
+}
+
+.panel-primary {
+	background-color: #2CACE3;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	border: none;
+}
+
+.panel-primary a {
+	color: white;
+	font-size: 2em;
+}
