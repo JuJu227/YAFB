@@ -75,13 +75,25 @@ def type_list(request, type_id):
 
 def news_feed(request):
     messages = Message.objects.order_by('-time_stamp')
-
+    navinfo = nav()
     template = loader.get_template('directory/news_item.html')
     context = RequestContext(request, {
         'newsfeed': messages,
+        'navinfo': navinfo,
     })
 
     return HttpResponse(template.render(context))
+
+def post_item(request):
+	# TODO: change employee to signed in user
+    employee = Employee.objects.get(pk=2)
+
+    message = Message(writer=employee, text=request.POST.get("content", ""))
+    message.save()
+    print "New message %s" % message.text
+
+    return HttpResponseRedirect("..")
+
 
 def news_feed_by_empoyee(request, employee_id):
     employee = Employee.objects.get(pk=employee_id)

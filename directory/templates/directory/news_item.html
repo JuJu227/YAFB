@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <form class="form-inline" method="post" action="newpost/">
+    <form class="form-inline" method="post" action="post-item/">
         <div class="form-group">
             {% csrf_token %}
             <input type="text" id="news-feed" class="form-control" name="content" placeholder="News feed...">
