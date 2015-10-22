@@ -103,3 +103,11 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+/*
+ * custom
+ */
+
+.td-date {
+  width: 150px
+}

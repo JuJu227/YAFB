@@ -48,11 +48,12 @@ def type_list(request, type_id):
 
 def news_feed(request, employee_id):
     employee = Employee.objects.get(pk=employee_id)
-    messages = Message.objects.filter(writer=employee_id)
+    messages = Message.objects.filter(writer=employee_id).order_by('-time_stamp')
+
     template = loader.get_template('directory/message.html')
     context = RequestContext(request, {
         'employee': employee,
-        'messages': messages,
+        'newsfeed': messages,
     })
 
     return HttpResponse(template.render(context))

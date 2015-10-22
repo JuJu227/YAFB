@@ -36,7 +36,7 @@ class Employee(models.Model):
 		return self.full_name
 
 class Message(models.Model):
-	writer = models.OneToOneField(User)
+	writer = models.ForeignKey(Employee)
 	text = models.CharField(max_length=300)
 	time_stamp = models.DateField(auto_now=True)
 

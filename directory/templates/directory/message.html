@@ -2,15 +2,32 @@
 
 {% block messageblock %}
 
-    {% if messages %}
-        {% for message in messages %}
+    {% if newsfeed %}
+        {% for feed in newsfeed %}
             <tr>
-                <td>{{ message.time_stamp }}</td>
-                <td colspan="4">{{ message.text }}</td>
+                <td>{{ feed.time_stamp }}</td>
+                <td colspan="4">{{ feed.text }}</td>
             <tr>
         {% endfor %}
     {% else %}
         <p>No news feed...</p>
+    {% endif %}
+
+{% endblock %}
+
+
+
+{% block employeeblock %}
+
+    {% if employee %}
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">{{ employee.full_name }} <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">{{ employee.title }}</a></li>
+            <li><a href="#">{{ employee.start_date }}</a></li>
+            <li><a href="#">{{ employee.description }}</a></li>
+        </ul>
+    {% else %}
+        <p>This employee is not available.</p>
     {% endif %}
 
 {% endblock %}
