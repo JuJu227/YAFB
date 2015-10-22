@@ -19,7 +19,7 @@
 	    {% for group in groups %}
 	        <div class="col-md-2">
 	        	<div class="panel panel-primary panel-small">
-		        	<p class="panel-body"><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></p>
+		        	<p class="panel-body"><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}  {{ group.type }}</a></p>
 	        	</div>
 	        </div>
 	    {% endfor %}
