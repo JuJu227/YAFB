@@ -50,6 +50,11 @@
 	border: none;
 }
 
+.panel-small {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
 .panel-primary a {
 	color: white;
 	font-size: 2em;

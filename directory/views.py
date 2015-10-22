@@ -33,10 +33,12 @@ def index(request):
 
 def employee_detail(request, employee_id):
 	employee = Employee.objects.get(pk=employee_id)
+	groups = GroupProfile.objects.filter(employee=employee_id)
 	template = loader.get_template('directory/employee.html')
 	navinfo = nav()
 	context = RequestContext(request, {
         'employee': employee,
+        'groups': groups,
         'navinfo': navinfo,
     })
 

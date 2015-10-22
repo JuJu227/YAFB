@@ -5,15 +5,25 @@
 	{% if employee %}
 	    <div class="row">
 	        <div class="col-md-4">
-	        	<h3><a href="/directory/employee/{{ employee.id }}/">{{ employee.user.username }}</a></h3>
-		        <p>{{ employee.full_name }}</p>
-		        <p>{{ employee.title }}</p>
-		        <p>{{ employee.start_date }}</p>
-		        <p>{{ employee.description }}</p>
+	        	<h3>{{ employee.full_name }}</h3>
+		        <p><span>Title: </span>{{ employee.title }}</p>
+		        <p><span>Start Date: </span>{{ employee.start_date }}</p>
+		        <p><span>Office: </span>{{ employee.office }}</p>
+		        <p><span>Bio: </span>{{ employee.description }}</p>
 	        </div>
 	    </div>
-	{% else %}
-	    <p>This employee is not available.</p>
+	{% endif %}
+
+	{% if groups %}
+	    <div class="row">
+	    {% for group in groups %}
+	        <div class="col-md-2">
+	        	<div class="panel panel-primary panel-small">
+		        	<p class="panel-body"><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></p>
+	        	</div>
+	        </div>
+	    {% endfor %}
+	    </div>
 	{% endif %}
 
 {% endblock %}
