@@ -73,7 +73,17 @@ def type_list(request, type_id):
 
 	return HttpResponse(template.render(context))
 
-def news_feed(request, employee_id):
+def news_feed(request):
+    messages = Message.objects.order_by('-time_stamp')
+
+    template = loader.get_template('directory/news_item.html')
+    context = RequestContext(request, {
+        'newsfeed': messages,
+    })
+
+    return HttpResponse(template.render(context))
+
+def news_feed_by_empoyee(request, employee_id):
     employee = Employee.objects.get(pk=employee_id)
     messages = Message.objects.filter(writer=employee_id).order_by('-time_stamp')
 
