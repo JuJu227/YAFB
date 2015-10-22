@@ -31,6 +31,7 @@ class Employee(models.Model):
 	start_date = models.DateField()
 	office = models.ForeignKey(Office)
 	groups = models.ManyToManyField(GroupProfile)
+	picture = models.ImageField(upload_to='profile_pictures', null=True)
 
 	def __unicode__(self):
 		return self.full_name
