@@ -1,15 +1,5 @@
 {% extends 'base.html' %}
 
-{% block navcontent %}
-	{% if types %}
-	    {% for type in types %}
-        	<li><a href="/directory/type/{{ type.id }}/">{{ type.name }}</a></li>
-	    {% endfor %}
-	{% else %}
-	    <p>No types are available.</p>
-	{% endif %}
-{% endblock %}
-
 
 {% block headerblock %}
 	<p>{{ header }}</p>
@@ -27,8 +17,6 @@
 	        </div>
 	    {% endfor %}
 	    </div>
-	{% else %}
-	    <p>No groups are available.</p>
 	{% endif %}
 {% endblock %}
 
@@ -45,8 +33,6 @@
 		        </li>
 		    {% endfor %}
 		    </ul>
-		{% else %}
-		    <p>No employees are available.</p>
 		{% endif %}
 	</div>
 {% endblock %}
