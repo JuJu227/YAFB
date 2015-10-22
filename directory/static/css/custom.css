@@ -20,6 +20,13 @@
 	font-size: 4em;
 }
 
+.sub-header {
+	text-align: center;
+	color: #2CACE3;
+	font-size: 4em;
+	margin-top: -0.5em;
+}
+
 .btn {
 	color: #2CACE3;
 }

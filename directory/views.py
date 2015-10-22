@@ -44,10 +44,14 @@ def employee_detail(request, employee_id):
 
 def group_detail(request, group_id):
 	group = GroupProfile.objects.get(pk=group_id)
+	employees = Employee.objects.filter(groups=group_id)
+	header = "Group: %s" % group
 	template = loader.get_template('directory/group.html')
 	navinfo = nav()
 	context = RequestContext(request, {
         'group': group,
+        'employees': employees,
+        'header': header,
         'navinfo': navinfo,
     })
 	

@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
 
+{% block headerblock %}
+	<p>{{ header }}</p>
+{% endblock %}
+
 {% block content %}
 	{% if group %}
-	    <div>
-	        <div class="col-md-4">
-	        	<h3><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></h3>
-		        <p>{{ group.description }}</p>
-	        </div>
+	    <div class="sub-header">
+	        <h3>Description: {{ group.description }}</h3>
 	    </div>
-	{% else %}
-	    <p>This group is not available.</p>
 	{% endif %}
+
+	<div class="panel panel-default">
+		{% if employees %}
+		    <ul class="list-group">
+		    {% for employee in employees %}
+		        <li class="list-group-item">
+		        	<img src="{{ employee.picture }}">
+		        	<h4><a href="/directory/employee/{{ employee.id }}/">{{ employee.full_name }}</a></h4>
+			        <p>{{ employee.title }}</p>
+		        </li>
+		    {% endfor %}
+		    </ul>
+		{% endif %}
+	</div>
 {% endblock %}
