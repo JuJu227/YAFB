@@ -43,6 +43,7 @@ body {
 	border-color: #EDEFF0;
 	border-width: 2px;
 	font-weight: 200;
+	padding-left: 10px;
 }
 
 .search-btn {
