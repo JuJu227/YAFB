@@ -59,6 +59,21 @@ def group_detail(request, group_id):
 	
 	return HttpResponse(template.render(context))
 
+def office_detail(request, office_id):
+	office = Office.objects.get(pk=office_id)
+	employees = Employee.objects.filter(office=office_id)
+	header = "Office: %s" % office
+	template = loader.get_template('directory/group.html')
+	navinfo = nav()
+	context = RequestContext(request, {
+        'office': office,
+        'employees': employees,
+        'header': header,
+        'navinfo': navinfo,
+    })
+	
+	return HttpResponse(template.render(context))
+
 def type_list(request, type_id):
 	groups = GroupProfile.objects.filter(type=type_id)
 	type = Type.objects.get(pk=type_id)
