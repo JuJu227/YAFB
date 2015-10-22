@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e330a9a9-928c-4e24-8897-5b18232dae3e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/directory/migrations/0003_auto_20151022_1308.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/directory/migrations/0004_employee_groups.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/directory/static/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/directory/static/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/directory/templates/directory/type.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directory/admin.py" afterPath="$PROJECT_DIR$/directory/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directory/templates/base.html" afterPath="$PROJECT_DIR$/directory/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directory/static/css/custom.css" afterPath="$PROJECT_DIR$/directory/static/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directory/templates/directory/index.html" afterPath="$PROJECT_DIR$/directory/templates/directory/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directory/models.py" afterPath="$PROJECT_DIR$/directory/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directory/urls.py" afterPath="$PROJECT_DIR$/directory/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directory/views.py" afterPath="$PROJECT_DIR$/directory/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="YAFB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,7 +70,7 @@
               <entry file="file://$PROJECT_DIR$/directory/templates/directory/index.html">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
-                    <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+                    <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
                     <folding />
                   </state>
                 </provider>
@@ -134,8 +124,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/directory/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6769231">
-              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.4923077">
+              <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -785,7 +775,7 @@
     <entry file="file://$PROJECT_DIR$/directory/templates/directory/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -812,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/directory/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6769231">
-          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.4923077">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
