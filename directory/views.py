@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 
-from .models import User, Employee, GroupProfile
+from .models import User, Employee, GroupProfile, Message
 
 
 def index(request):
@@ -31,3 +31,14 @@ def group_detail(request, group_id):
     })
 	
 	return HttpResponse(template.render(context))
+
+def news_feed(request, employee_id):
+    employee = Employee.objects.get(pk=employee_id)
+    messages = Message.objects.filter(writer=employee_id)
+    template = loader.get_template('directory/message.html')
+    context = RequestContext(request, {
+        'employee': employee,
+        'messages': messages,
+    })
+
+    return HttpResponse(template.render(context))

@@ -1,0 +1,16 @@
+{% extends 'newsfeed.html' %}
+
+{% block messageblock %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <tr>
+                <td>{{ message.time_stamp }}</td>
+                <td colspan="4">{{ message.text }}</td>
+            <tr>
+        {% endfor %}
+    {% else %}
+        <p>No news feed...</p>
+    {% endif %}
+
+{% endblock %}

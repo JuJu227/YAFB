@@ -21,3 +21,4 @@ class Message(models.Model):
 	writer = models.OneToOneField(User)
 	text = models.CharField(max_length=300)
 	time_stamp = models.DateField(auto_now=True)
+
