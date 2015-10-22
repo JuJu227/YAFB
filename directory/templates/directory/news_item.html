@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form class="form-inline" method="post" action="newpost/">
+        <div class="form-group">
+            {% csrf_token %}
+            <input type="text" id="news-feed" class="form-control" name="content" placeholder="News feed...">
+            <input type="submit" class="form-control" value="Post">
+        </div>
+    </form>
+
+    {% if newsfeed %}
+        {% for feed in newsfeed %}
+            <tr>
+                <td>{{ feed.time_stamp }}</td>
+                <td colspan="4">{{ feed.text }}</td>
+            <tr>
+        {% endfor %}
+    {% else %}
+        <p>No news feed...</p>
+    {% endif %}
+
+{% endblock %}
