@@ -14,6 +14,40 @@ def nav():
     }
     return navinfo
 
+def login(request):
+    template = loader.get_template('login.html')
+    context = RequestContext(request, {})
+
+    return HttpResponse(template.render(context))
+
+def signup(request):
+    employee = Employee()
+    employee.email = request.POST.get("email")
+    employee.full_name = request.POST.get("username")
+    employee.title = request.POST.get("title")
+    email = "{email}".format(email=employee.email)
+
+    user = User.objects.filter(email=email.lower())
+
+    if user:
+        employee.user = user
+        employee.save()
+        return HttpResponseRedirect("/directory")
+
+    return HttpResponseRedirect("/login")
+
+def signin(request):
+    email = "{username}".format(username=request.POST.get("username"))
+    password = "{password}".format(password=request.POST.get("password"))
+    employee = Employee.objects.filter(email=email.lower(), password=password)
+
+    print "Sign-in : %s %s --- %s" % (email, password, employee)
+
+    if employee:
+        return HttpResponseRedirect("/directory")
+
+    return HttpResponseRedirect("/login")
+
 def index(request):
     employees = Employee.objects.order_by('start_date')
     groups = GroupProfile.objects.order_by('description')
