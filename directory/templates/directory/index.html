@@ -1,12 +1,29 @@
 {% extends 'base.html' %}
 
+{% block navcontent %}
+	{% if types %}
+	    {% for type in types %}
+        	<li><a href="/directory/type/{{ type.id }}/">{{ type.name }}</a></li>
+	    {% endfor %}
+	{% else %}
+	    <p>No types are available.</p>
+	{% endif %}
+{% endblock %}
+
+
+{% block headerblock %}
+	<p>{{ header }}</p>
+{% endblock %}
+
+
 {% block groupblock %}
 	{% if groups %}
 	    <div>
 	    {% for group in groups %}
 	        <div class="col-md-4">
-	        	<h3><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></h3>
-		        <p>{{ group.description }}</p>
+	        	<div class="panel panel-primary">
+		        	<p class="panel-body"><a href="/directory/group/{{ group.id }}/">{{ group.group.name }}</a></p>
+	        	</div>
 	        </div>
 	    {% endfor %}
 	    </div>
@@ -35,5 +52,4 @@
 		    <p>No employees are available.</p>
 		{% endif %}
 	</div>
-
 {% endblock %}
