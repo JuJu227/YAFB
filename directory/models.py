@@ -39,7 +39,7 @@ class Employee(models.Model):
 class Message(models.Model):
 	writer = models.ForeignKey(Employee)
 	text = models.CharField(max_length=300)
-	time_stamp = models.DateField(auto_now=True)
+	time_stamp = models.DateTimeField(auto_now=True)
 
 	def __unicode__(self):
 		return self.text

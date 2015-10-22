@@ -109,5 +109,9 @@ body {
  */
 
 .td-date {
-  width: 150px
+  width: 140px;
+}
+
+#news-feed {
+  width: 1100px;
 }

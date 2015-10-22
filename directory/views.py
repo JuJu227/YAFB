@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
 
 from .models import User, Employee, GroupProfile, Type, Office, Message
@@ -79,3 +79,12 @@ def news_feed(request, employee_id):
 
     return HttpResponse(template.render(context))
 
+def post_news_feed(request, employee_id):
+    employee = Employee.objects.get(pk=employee_id)
+
+    if employee:
+        message = Message(writer=employee, text=request.POST.get("content", ""))
+        message.save()
+        print "New message %s" % message.text
+
+    return HttpResponseRedirect("..")
