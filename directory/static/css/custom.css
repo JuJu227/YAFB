@@ -4,7 +4,8 @@ body {
 
 .navbar {
 	background-color: #2CACE3;
-	border: none;
+	border-bottom: solid;
+	border-color: white;
 }
 
 .navbar-inverse .navbar-nav>li>a {
