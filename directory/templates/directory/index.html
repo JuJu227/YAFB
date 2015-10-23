@@ -36,7 +36,8 @@
 		    <ul class="list-group">
 		    {% for employee in employees %}
 		        <li class="list-group-item">
-		        	<img src="{{ employee.picture }}">
+		        	<!-- <img src="../static/profile_pictures/{{ employee.picture.name }}" height="100" width="100"> -->
+		        	<img src="../static/profile_pictures/Carl_B_070.jpg" height="100" width="100">
 		        	<h4><a href="/directory/employee/{{ employee.id }}/">{{ employee.full_name }}</a></h4>
 			        <p>{{ employee.title }}</p>
 		        </li>
