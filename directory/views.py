@@ -163,10 +163,20 @@ def news_feed(request):
         return HttpResponseRedirect("/login")
 
     messages = Message.objects.order_by('-time_stamp')
+    newsfeed = []
     navinfo = nav(request)
+
+    for message in messages:
+        employee = Employee.objects.get(pk=message.writer_id)
+
+        if employee:
+            feed = dict(writer_id=employee.id, writer_full_name=employee.full_name,
+                        time_stamp=message.time_stamp, text=message.text)
+            newsfeed.append(feed)
+
     template = loader.get_template('directory/news_item.html')
     context = RequestContext(request, {
-        'newsfeed': messages,
+        'newsfeed': newsfeed,
         'navinfo': navinfo,
     })
 
@@ -177,8 +187,8 @@ def post_item(request):
     if not __login__(request):
         return HttpResponseRedirect("/login")
 
-    # TODO: change employee to signed in user
-    employee = Employee.objects.get(pk=2)
+    employee_id = request.COOKIES.get("user_id")
+    employee = Employee.objects.get(pk=employee_id)
 
     message = Message(writer=employee, text=request.POST.get("content", ""))
     message.save(request)
