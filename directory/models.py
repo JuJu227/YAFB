@@ -33,7 +33,6 @@ class Employee(models.Model):
 	groups = models.ManyToManyField(GroupProfile)
 	password = models.CharField(max_length=30)
 	email = models.CharField(max_length=100, null=True)
-	picture = models.ImageField(upload_to='profile_pictures', null=True)
 	picture = models.ImageField(upload_to='profile_pictures', null=True, blank=True)
 
 	def __unicode__(self):
