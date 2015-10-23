@@ -20,4 +20,5 @@ urlpatterns = [
 	url(r'^directory/', include('directory.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^message/', include('directory.urls')),
+    url(r'^', include('directory.urls'))
 ]

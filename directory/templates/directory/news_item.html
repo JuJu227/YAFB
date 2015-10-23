@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'feedboard.html' %}
 
-{% block content %}
-
+{% block feedpostblock %}
     <form class="form-inline" method="post" action="post-item/">
         <div class="form-group">
             {% csrf_token %}
@@ -9,16 +8,22 @@
             <input type="submit" class="form-control" value="Post">
         </div>
     </form>
+{% endblock %}
 
-    {% if newsfeed %}
-        {% for feed in newsfeed %}
-            <tr>
-                <td>{{ feed.time_stamp }}</td>
-                <td colspan="4">{{ feed.text }}</td>
-            <tr>
-        {% endfor %}
-    {% else %}
-        <p>No news feed...</p>
-    {% endif %}
+{% block feedblock %}
+
+    <div class="panel panel-default">
+		{% if newsfeed %}
+		    <ul class="list-group">
+		    {% for feed in newsfeed %}
+		        <li class="list-group-item">
+		        	<h4><a href="/directory/employee/{{ feed.writer_id }}/">{{ feed.writer_full_name }}</a></h4>
+                    <p>{{ feed.time_stamp }}</p>
+			        <p>{{ feed.text }}</p>
+		        </li>
+		    {% endfor %}
+		    </ul>
+		{% endif %}
+	</div>
 
 {% endblock %}
