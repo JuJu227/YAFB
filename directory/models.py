@@ -44,4 +44,4 @@ class Message(models.Model):
 	time_stamp = models.DateTimeField(auto_now=True)
 
 	def __unicode__(self):
-		return self.text
+		return str(self.time_stamp)
