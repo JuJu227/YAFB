@@ -91,11 +91,13 @@ def employee_detail(request, employee_id):
 
     employee = Employee.objects.get(pk=employee_id)
     groups = GroupProfile.objects.filter(employee=employee_id)
+    reports = Employee.objects.filter(manager=employee_id)
     template = loader.get_template('directory/employee.html')
     navinfo = nav(request)
     context = RequestContext(request, {
         'employee': employee,
         'groups': groups,
+        'reports': reports,
         'navinfo': navinfo,
     })
 
