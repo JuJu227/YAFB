@@ -10,7 +10,7 @@ class GroupAdmin(admin.ModelAdmin):
     list_filter = ('type',)
 
 class OfficeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'Location',)
+    list_display = ('name', 'location',)
 
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'title', 'start_date', 'office')

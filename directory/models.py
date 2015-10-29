@@ -18,7 +18,7 @@ class GroupProfile(models.Model):
 
 class Office(models.Model):
 	name = models.CharField(max_length=100)
-	Location = models.CharField(max_length=300)
+	location = models.CharField(max_length=300)
 
 	def __unicode__(self):
 		return self.name
