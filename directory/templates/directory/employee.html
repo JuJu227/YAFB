@@ -11,6 +11,7 @@
 		        <p><span>Start Date: </span>{{ employee.start_date }}</p>
 		        <p><span>Office: </span>{{ employee.office }}</p>
 		        <p><span>Bio: </span>{{ employee.description }}</p>
+		        <p><span>Manager: </span><a href="/directory/employee/{{ employee.manager.id }}/">{{ employee.manager.full_name }}</a></p>
 	        </div>
 	    </div>
 	{% endif %}

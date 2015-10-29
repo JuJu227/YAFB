@@ -15,6 +15,7 @@ class OfficeAdmin(admin.ModelAdmin):
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'title', 'start_date', 'office')
     list_filter = ('start_date', 'title')
+    filter_horizontal = ('groups',)
 
 class MessageAdmin(admin.ModelAdmin):
     list_display = ('writer', 'time_stamp', 'text',)
